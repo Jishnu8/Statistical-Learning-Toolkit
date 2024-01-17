@@ -87,4 +87,17 @@ pca_approximation_method_classify(x_train, y_train, x_test, y_test, dim=projecte
 
 This statistical learning toolkit is in active development. Despite featuring a wide range of functionalities, it is apparent that it currently represents only a tiny fraction of the extensive spectrum of available statistical learning methods.  Hence, any helpful comments and improvements are highly encouraged. To do so, please open an issue in this Github page.
 
+## 5. Citation
+If you use or extend this work, please consider citing it as below:
+
+```
+@software{Parayil_Shibu_Statistical_Learning_Toolkit_2023,
+author = {Parayil Shibu, Jishnu},
+month = mar,
+title = {{Statistical Learning Toolkit}},
+url = {https://github.com/Jishnu8/Statistical-Learning-Toolkit},
+version = {1.0.0},
+year = {2023}
+}
+```
 
