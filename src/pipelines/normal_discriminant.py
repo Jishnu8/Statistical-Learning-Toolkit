@@ -1,12 +1,9 @@
-import tensorflow as tf
 import keras
-from keras import layers
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import accuracy_score
 from PIL import Image
-import cv2
 import time
 from ..utils import split_classes
 from ..utils import plot_2d_data

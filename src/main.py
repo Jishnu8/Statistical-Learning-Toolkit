@@ -1,20 +1,4 @@
-import tensorflow as tf
 import keras
-from keras import layers
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-from sklearn.metrics import accuracy_score
-from PIL import Image
-import cv2
-import time
-# from utils import split_classes
-# from utils import plot_2d_data
-# from dim_reduction.mda import MDA
-# from dim_reduction.pca import PCA
-# from param_estimation.mle import MLE
-# from param_estimation.bayes_param_estimation import BayesParamEstimation
-# from classifers.normal_discriminant import NormalDiscriminant3
 from src.pipelines.normal_discriminant import normal_discriminant_classify
 from src.pipelines.knn import knn_classify
 from src.classifers.pca_approx_method import pca_approximation_method_classify

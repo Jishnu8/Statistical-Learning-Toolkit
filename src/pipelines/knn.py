@@ -1,19 +1,6 @@
-import tensorflow as tf
-import keras
-from keras import layers
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-from sklearn.metrics import accuracy_score
-from PIL import Image
-import cv2
-import time
-from ..utils import split_classes
-from ..utils import plot_2d_data
 from ..dim_reduction.mda import MDA
 from ..dim_reduction.pca import PCA
-from ..param_estimation.mle import MLE
-from ..param_estimation.bayes_param_estimation import BayesParamEstimation
 from ..classifers.knn import KNN
 
 def knn_classify(x_train, y_train, x_test, y_test, neighbours=3, metric_ord = 2, projected_dim = 9, dim_reduction="MDA", display_conf=False):
