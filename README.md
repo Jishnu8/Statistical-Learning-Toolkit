@@ -29,6 +29,6 @@ each feature has the same variance regardless of class.
 * **PCA Approximation Method**: This is a custom method which is both extremly efficient and accurate, created and supported by this toolkit. Given the training set, it involves finding the principal components (using PCA) for each class. Given the eigenspaces associated with each class, a test sample is first projected onto the eigenspace of each class and then reconstructed back to its original dimension. The prediction is made based on the class for which this reconstruction closely aligns with the original test sample, measured by the mean square error.
   
 ### Pipelines
-The general paradigm for most classification tasks involves dimensionality reduction, parameter estimation (if Bayes classifiers are used) and the usage of the classifier itself. 
+The general paradigm for most classification tasks involves dimensionality reduction, parameter estimation (if Bayes classifiers are used) and the usage of the classifier itself. For all classifiers mentioned above (except for the PCA Approximation Method which does not follow this general paradigm), this toolkit supports a single method to perform classification with the desired procedures of each part of the pipeline.
 
 ## Usage
