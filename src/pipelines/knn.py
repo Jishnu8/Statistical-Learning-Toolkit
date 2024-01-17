@@ -3,7 +3,7 @@ from ..dim_reduction.mda import MDA
 from ..dim_reduction.pca import PCA
 from ..classifers.knn import KNN
 
-def knn_classify(x_train, y_train, x_test, y_test, neighbours=3, metric_ord = 2, projected_dim = 9, dim_reduction="MDA", display_conf=False):
+def knn_classify(x_train, y_train, x_test, y_test, neighbours=3, metric_ord = 2, projected_dim = 9, dim_reduction="MDA", display_conf=False):        
     if dim_reduction == "MDA":
         mda = MDA(x_train, y_train, dim=projected_dim) #change to train
         x_train_red, projected_vecs = mda.get_features()

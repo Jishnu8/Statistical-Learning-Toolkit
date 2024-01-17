@@ -1,10 +1,11 @@
-import keras
+import tensorflow.keras as tk
+from keras import layers
 from src.pipelines.normal_discriminant import normal_discriminant_classify
 from src.pipelines.knn import knn_classify
 from src.classifers.pca_approx_method import pca_approximation_method_classify
 
 def main():
-    (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
+    (x_train, y_train), (x_test, y_test) = tk.datasets.mnist.load_data()
     x_train = x_train.reshape((x_train.shape[0], x_train.shape[1] * x_train.shape[2]))
     x_test = x_test.reshape((x_test.shape[0], x_test.shape[1] * x_test.shape[2]))
 
