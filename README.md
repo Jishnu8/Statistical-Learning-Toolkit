@@ -1,7 +1,13 @@
 # Statistical-Learning-Toolkit
 A comprehensive Statistical Learning Toolkit featuring a diverse set of classifiers based on Bayesian decision theory, parameter and density estimation techniques, and dimensionality reduction procedures.
 
-## About 
+## Installation 
+```
+$ git clone https://github.com/Jishnu8/Statistical-Learning-Toolkit
+$ pip install -r requirements.txt
+```
+
+## Supported Features
 This statistical learning toolkit has a wide range of functionalities. Following is a brief description on the methods that are currently supported:
 
 ### Dimensionality Reduction Techniques
@@ -32,3 +38,5 @@ each feature has the same variance regardless of class.
 The general paradigm for most classification tasks involves dimensionality reduction, parameter estimation (if Bayes classifiers are used) and the usage of the classifier itself. For all classifiers mentioned above (except for the PCA Approximation Method which does not follow this general paradigm), this toolkit supports a single method to perform classification with the desired procedures of each part of the pipeline.
 
 ## Usage
+
+The usage of this toolkit is fairly straightforward. Below are descriptions of how to set up the pipelines for classification using the normal discriminant, KNN and PCA Approximation method. Details on how to use a classifier, or a dimentionality reduction technique independently 
