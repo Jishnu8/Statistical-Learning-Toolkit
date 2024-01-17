@@ -14,6 +14,22 @@ from ..param_estimation.bayes_param_estimation import BayesParamEstimation
 from ..classifers.normal_discriminant import NormalDiscriminant1, NormalDiscriminant2, NormalDiscriminant3
 
 def normal_discriminant_classify(x_train, y_train, x_test, y_test, x_val = np.array([]), y_val = np.array([]), dim_reduction="MDA", discriminant_type="1", projected_dim = 9, param_estimation="MLE", display_conf=False):    
+    """
+    Performs classification using a normal discriminant and returns train and test accuracy
+
+    Args:
+        x_train: training features
+        y_train: training labels
+        x_val: validation features
+        y_val: validation labels
+        x_test: test features
+        y_test: test labels
+        discriminant_type: type of normal discriminant (between "1", "2", and "3")
+        projected_dim: dimension to which data is projected for dimensionality reduction
+        param_estimation: parameter estimation method used to compute unknown parameters of density 
+        display_conf: bool to determine whether the confusion matrix should be displayed.
+    """
+
     if dim_reduction == "MDA":
         mda = MDA(x_train, y_train, dim=projected_dim) #change to train
         x_train_red, projected_vecs = mda.get_features()

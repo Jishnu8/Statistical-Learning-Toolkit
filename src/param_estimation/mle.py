@@ -1,13 +1,32 @@
 import numpy as np
 
 class MLE:
+    """
+    MLE class
+
+    Maximum Likelihood Estimation class contains all the required methods to perform parameter estimation.
+    """
+
     def __init__(self, data, density="gaussian"):
+        """
+        Initializes class based on the required arguments. 
+
+        Args:
+            data: features
+            dim: density assumed for the features (currently only 
+            Gaussian is supported)
+        """
+
         self.data = data
         self.density = density
         if (density != "gaussian"):
             raise Exception("The following ", density, "is not supported")
 
     def get_params(self):
+        """
+        Returns the unknown parameters (mean and covariance of Gaussian)
+        """
+
         if self.density == 'gaussian':
             mean = self.__get_mean_gaussian()
             cov = self.__get_cov_gaussian()

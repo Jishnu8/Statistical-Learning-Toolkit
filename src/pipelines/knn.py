@@ -4,6 +4,20 @@ from ..dim_reduction.pca import PCA
 from ..classifers.knn import KNN
 
 def knn_classify(x_train, y_train, x_test, y_test, neighbours=3, metric_ord = 2, projected_dim = 9, dim_reduction="MDA", display_conf=False):        
+    """
+    Performs classification using KNN and returns test accuracy
+
+    Args:
+        x_train: training features
+        y_train: training labels
+        x_test: test features
+        y_test: test labels
+        neighbours: number of neighbours to look at for classification
+        metric_ord: order used for the Minkowski metric
+        projected_dim: dimension to which data is projected for dimensionality reduction
+        display_conf: bool to determine whether the confusion matrix should be displayed.
+    """
+    
     if dim_reduction == "MDA":
         mda = MDA(x_train, y_train, dim=projected_dim) #change to train
         x_train_red, projected_vecs = mda.get_features()

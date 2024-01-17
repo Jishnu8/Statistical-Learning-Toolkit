@@ -6,6 +6,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def get_class_projected_vecs(x_train, y_train):
+    '''
+    Returns the principal components of the data for each class
+
+    Args:
+        x_train: training features
+        y_train: training labels
+    '''
+
     class_separated = split_classes(x_train, y_train)
     class_seperated_pca = []
     class_projected_vecs = []
@@ -21,6 +29,18 @@ def get_class_projected_vecs(x_train, y_train):
     return class_projected_vecs
 
 def pca_approximation_method_classify(x_train, y_train, x_test, y_test, dim=9, display_conf=True):
+    '''
+    Classifies the test dataset using the pca approximation method 
+
+    Args:
+        x_train: training features
+        y_train: training labels
+        x_test: test features
+        y_test: test labels
+        dim: the number of principal components used in this method
+        display_conf: bool to determine whether the confusion matrix should be displayed.
+    '''
+
     full_class_projected_vecs = get_class_projected_vecs(x_train, y_train)
     class_projected_vecs = []
     for j in range(len(full_class_projected_vecs)):

@@ -2,9 +2,22 @@ import numpy as np
 from src.utils import split_classes
 
 class MDA:
-    'Multiple Discriminant Analysis'
+    """
+    MDA class
+
+    Multiple Discriminant Analysis class contains all the required methods to perform dimensionality reduction.
+    """
 
     def __init__(self, data_x, data_y, dim):
+        """
+        Initializes class based on the required arguments. 
+
+        Args:
+            data_x: features of the data
+            data_y: labels of the data
+            dim: dimension to which data is projected
+        """
+    
         self.data_x = data_x
         self.data_y = data_y
         self.dim = dim
@@ -13,7 +26,10 @@ class MDA:
         self.class_means = np.array([np.mean(self.class_separated_data_x[i], axis=0) for i in range(10)])
     
     def get_S_w(self):
-        'within-scatter matrix'
+        """
+        Returns 'within-scatter matrix'
+        """
+
         S_w = 0
         for i in range(10):
             S_i = (self.class_separated_data_x[i] - self.class_means[i]).T.dot(self.class_separated_data_x[i] - self.class_means[i])
@@ -22,7 +38,10 @@ class MDA:
         return S_w
     
     def get_S_b(self):
-        'between-scatter matrix'
+        """
+        Returns 'between-scatter matrix'
+        """
+
         S_b = 0
         n = np.array([self.class_separated_data_x[i].shape[0] for i in range(10)])
         diag_n = np.diag(n)
@@ -32,7 +51,9 @@ class MDA:
         return S_b
     
     def get_features(self):
-        'return mda reduced features and projected vectors'
+        """
+        Returns MDA reduced features and projection vectors
+        """
 
         S_w = self.get_S_w()
         S_b = self.get_S_b()

@@ -1,5 +1,4 @@
 import tensorflow.keras as tk
-from keras import layers
 from src.pipelines.normal_discriminant import normal_discriminant_classify
 from src.pipelines.knn import knn_classify
 from src.classifers.pca_approx_method import pca_approximation_method_classify
@@ -16,21 +15,21 @@ def main():
     discriminant_type = "1"
     display_conf = True
     normal_discriminant_classify(x_train, y_train, x_test, y_test, dim_reduction=dim_reduction, 
-             projected_dim=projected_dim, discriminant_type=discriminant_type,
-             display_conf=display_conf)
+                                projected_dim=projected_dim, discriminant_type=discriminant_type, 
+                                param_estimation=param_estimation, display_conf=display_conf)
 
-    # KNN 
+    # # KNN 
     dim_reduction = "MDA"
     projected_dim = 2
     neighbours=3
     metric_ord = 2
     display_conf = True
     knn_classify(x_train, y_train, x_test, y_test, dim_reduction=dim_reduction, 
-                 projected_dim=projected_dim, neighbours=neighbours, metric_ord=metric_ord,
-                 display_conf=display_conf)
+                 projected_dim=projected_dim, neighbours=neighbours, 
+                 metric_ord=metric_ord, display_conf=display_conf)
 
-    #PCA Approx Method
+    # #PCA Approx Method
     display_conf = True
-    dim = 2
-    pca_approximation_method_classify(x_train, y_train, x_test, y_test, dim=dim, display_conf=display_conf)
+    projected_dim = 2
+    pca_approximation_method_classify(x_train, y_train, x_test, y_test, dim=projected_dim, display_conf=display_conf)
 main()

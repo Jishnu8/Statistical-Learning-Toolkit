@@ -3,6 +3,17 @@ import matplotlib.pyplot as plt
 
 
 def split_classes(data, labels):
+    """
+    Return data split into seperate classes
+
+    Args:
+        data: features
+        labels: labels of features
+
+    Returns:
+        class_seperated: an array of dimension corresponding to the number of 
+        clases. Each entry in the array are the features for that particular class.
+    """
 
     unique_labels = np.unique(labels)
     num_labels = unique_labels.shape[0]

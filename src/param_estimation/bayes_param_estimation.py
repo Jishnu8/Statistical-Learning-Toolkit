@@ -1,7 +1,24 @@
 import numpy as np
 
 class BayesParamEstimation:
+    """
+    BayesParamEstimation class
+
+    Bayes Param Estimation class contains all the required methods to perform Bayes Parameter Estimation
+    """
+
     def __init__(self, data, density="gaussian", mode="MAP"):
+        """
+        Initializes class based on the required arguments. 
+
+        Args:
+            data: features
+            dim: density assumed for the features (currently only 
+            Gaussian is supported)
+            mode: method by which the unknown parameters are estimated from 
+            the posterior distribution (currently only MAP estimate is supported)
+        """
+
         self.data = data
         self.density = density
         if density == "gaussian":
@@ -10,6 +27,10 @@ class BayesParamEstimation:
             raise Exception("The following ", density, "is not supported")
 
     def get_params(self, cov, prior_params):
+        """
+        Returns an estimate of the unknown parameters
+        """
+        
         return self.estimator.get_parameters(cov, prior_params)
 
     
