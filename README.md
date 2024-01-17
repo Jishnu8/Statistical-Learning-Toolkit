@@ -41,6 +41,16 @@ The general paradigm for most classification tasks involves dimensionality reduc
 
 The usage of this toolkit is fairly straightforward as it has been well documented. Below are sample usages of how to set up the pipelines for classification using the normal discriminant, KNN and PCA Approximation method. Details on how to use a classifier, a parameter estimation method, or a dimentionality reduction technique independently can be found in the documentation provided for each method.
 
+We first provide the code for importing the MNIST datasets. The code for the subsquent pipelines are also given below.
+
+```python
+import tensorflow.keras as tk
+
+(x_train, y_train), (x_test, y_test) = tk.datasets.mnist.load_data()
+x_train = x_train.reshape((x_train.shape[0], x_train.shape[1] * x_train.shape[2]))
+x_test = x_test.reshape((x_test.shape[0], x_test.shape[1] * x_test.shape[2]))
+```
+
 ### 3.1. Normal Discriminants
 
 ```python
@@ -70,7 +80,7 @@ knn_classify(x_train, y_train, x_test, y_test, dim_reduction=dim_reduction,
 ```python
 display_conf = True
 projected_dim = 2
-pca_approximation_method_classify(x_train, y_train, x_test, y_test, dim=dim, display_conf=display_conf)
+pca_approximation_method_classify(x_train, y_train, x_test, y_test, dim=projected_dim, display_conf=display_conf)
 ```
 
 ## 4. Call for Contributions
