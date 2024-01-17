@@ -91,13 +91,13 @@ This statistical learning toolkit is in active development. Despite featuring a 
 If you use or extend this work, please consider citing it as below:
 
 ```
-@software{Parayil_Shibu_Statistical_Learning_Toolkit_2023,
+@software{Parayil_Shibu_Statistical_Learning_Toolkit_2024,
 author = {Parayil Shibu, Jishnu},
-month = mar,
+month = jan,
 title = {{Statistical Learning Toolkit}},
 url = {https://github.com/Jishnu8/Statistical-Learning-Toolkit},
 version = {1.0.0},
-year = {2023}
+year = {2024}
 }
 ```
 
